@@ -1,0 +1,87 @@
+.search-bar {
+    width: 100%;
+    margin-left:0;
+    padding-top: 20px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    overflow: hidden;
+}
+
+#search-input {
+    width: 90%;
+    border: 0;
+    outline: 0;
+    padding: 3px 3px 3px 3px;
+    background: transparent;
+    height: 20px;
+    font-size: 1.25rem;
+    color: white;
+
+}
+
+#search-input::placeholder {
+    color: var(--white);
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    padding: 10px 10px;
+}
+
+.city-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.weather-state {
+    font-size: 1rem;
+}
+
+.weather-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.temperature {
+    font-size: 80px;
+    font-weight: lighter;
+    line-height: 1;
+    position: relative;
+}
+
+.temperature::after {
+    content: '°C';
+    position: absolute;
+    font-size: 30px;
+}
+
+.additional-section {
+    border-top: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.additional-section .row {
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.additional-section .item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.additional-section .item .label {
+    font-weight: bold;
+}

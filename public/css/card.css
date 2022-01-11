@@ -1,0 +1,129 @@
+.cardImg
+{   
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    border-radius: 30px;
+    overflow: hidden;
+    
+}
+.cardImg img
+{   
+    position: relative;
+    border-radius: 50%;
+}
+.card {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(224, 125, 100, 0.3);
+    transition: 0.3s;
+    padding: 10px;
+   
+}
+.card:hover
+{
+    box-shadow: 0 10px 15px 0 rgba(36, 20, 177, 0.301);
+}
+
+
+.wrapper{
+    width: 100%;
+    height: 150px;
+    border-radius: 50px;
+    padding: 20px;
+    background: #FDFAF6;
+    box-shadow: 0 10px 10px 0 rgb(100 140 235 / 30%);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper:hover
+{
+    box-shadow: 0 10px 15px 0 rgba(29, 14, 165, 0.301);
+}
+.titleCard
+{
+    color:var(--blue);
+    font-size: 1.75rem;
+    font-weight: bold; 
+}
+
+.name-device {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+
+}
+.status{  
+    color:orange;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+.progress{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.toggle-btn, 
+.toggle-btn1, 
+.toggle-btn2, 
+.toggle-btn3{
+    width: 80px;
+    height: 40px;
+    background: rgb(241, 99, 99);
+    border-radius: 30px;
+    padding: 5px;
+    transition: all 300ms ease-in-out;
+}
+.toggle-btn > .inner-circle, 
+.toggle-btn1 > .inner-circle, 
+.toggle-btn2 > .inner-circle, 
+.toggle-btn3 > .inner-circle{
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius:50%;
+	transition: all 300ms ease-in-out;
+}
+.toggle-btn.active{
+	
+	background: #2169f3;
+	box-shadow: 0 0 20px #2196f3, 0 0 20px #2196f3, 0 0 20px #2196f3;
+	transition-delay: 0.5s;
+}
+.toggle-btn1.active{
+	
+	background: #8b1590;
+	box-shadow: 0 0 10px #f03cf7, 0 0 20px #f03cf7, 0 0 20px #f03cf7;
+	transition-delay: 0.5s;
+}
+.toggle-btn2.active{
+	
+	background: #079398;
+	box-shadow: 0 0 10px #21ecf3, 0 0 20px #21ecf3, 0 0 20px #21ecf3;
+	transition-delay: 0.5s;
+}
+.toggle-btn3.active{
+	background: #72b506;
+	box-shadow: 0 0 10px #a3f321, 0 0 20px #a3f321, 0 0 20px #a3f321;
+	transition-delay: 0.5s;
+}
+.toggle-btn.active>.inner-circle,
+.toggle-btn1.active>.inner-circle,
+.toggle-btn2.active>.inner-circle,
+.toggle-btn3.active>.inner-circle{
+	margin-left: 40px;
+}

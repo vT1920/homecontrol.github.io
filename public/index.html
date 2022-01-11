@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My home </title>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
+  
+    <script src="../js/function.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/moment.js"></script>
+    <script src="../js/login.js"></script>
+
+    <link rel="icon" href="../img/home.ico" type="icon/image type">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+        <div id="login_div" class="main-div">
+            <div class="tittle-login">
+                <h2>Login</h2>
+                <h2>Login</h2>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email..." id="email_field" />
+                <input type="password" placeholder="Password..." id="password_field" />
+            </div>  
+            <div class="bottom">
+                <button onclick="signIn()">Sign in</button>
+                <button onclick="signUp()">Sign up</button>
+            </div>
+            <a onclick="forgotPass()">Forgot Password?</a>
+        </div>
+      
+    <div id= "logined_div" class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                    <span class="title">My home</span></a>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <span class="icon"><ion-icon name="planet-outline"></ion-icon></span>
+                    <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Members</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                        <span class="title">Note</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li> 
+                <li>
+                    <a  onclick="forgotPass()" >
+                        <span class="icon"><ion-icon name="keypad-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Reset PW</span>
+                        
+                    </a>
+                </li> 
+                <li>
+                    <a onclick="signOut()" >
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Sign out</span>
+                    </a>
+                </li> 
+              
+            </ul>
+        </div>
+    <!--main -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class= "topbar-tittle">
+                <h1>Welcome Home</h1>
+            </div>
+            <div class="user">
+                 <a id =user-id> </a>
+            </div>
+           
+        </div>
+
+        <div class="cardBox">
+            <div class="cardImg">
+                <div class="img">
+                    <img src="../img/home.jpg">
+                </div>
+            </div> 
+               
+            <div class="row">
+                <div class="column2">
+                    <div class = "wrapper">
+                        <div>
+                            <img id="light" src="../img/lightoff.png">
+                        </div>
+                        <div class="name-device">
+                            <h3 class="titleCard">Light</h3>
+                            <h3 class="status" id ="st1"></h3>
+                        </div>
+                        <div class = "progress">
+                            <div class = "toggle-btn" id ="unact">
+                                <div class = "inner-circle"></div>
+                            </div>
+                            <div class = "toggle-btn active" id ="act">
+                                <div class = inner-circle></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column2">
+                    <div class = "wrapper"> 
+                        <div>
+                            <img id="fan" src="../img/fanoff.png">
+                        </div>
+                        <div class="name-device">
+                            <h3 class="titleCard">Fan</h3>
+                            <h3 class="status" id ="st2"></h3>
+                        </div>
+                        <div class = "progress">
+                            <div class = "toggle-btn1" id ="unact1">
+                                <div class = "inner-circle"></div>
+                            </div>
+                            <div class = "toggle-btn1 active" id ="act1">
+                                <div class = inner-circle></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>   
+            <div class="row">
+                <div class="column2">
+                    <div class = "wrapper">
+                        <div>
+                            <img id="speaker" src="../img/speakeroff.png">
+                        </div>
+                        <div class="name-device">
+                            <h3 class="titleCard">Speaker</h3>
+                            <h3 class="status" id ="st3"></h3>
+                        </div>
+                        <div class = "progress">
+                            <div class = "toggle-btn3" id ="unact3">
+                                <div class = "inner-circle"></div>
+                            </div>
+                            <div class = "toggle-btn3 active" id ="act3">
+                                <div class = inner-circle></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column2">
+                    <div class = "wrapper">
+                        <div >
+                            <img id="conditioner" src="../img/conditioneroff.png">
+                        </div>
+                        <div class="name-device">
+                            <h3 class="titleCard">Conditioner</h3>
+                            <h3 class="status" id ="st4"></h3>
+                        </div>
+                        <div class = "progress">
+                            <div class = "toggle-btn2" id ="unact2">
+                                <div class = "inner-circle"></div>
+                            </div>
+                            <div class = "toggle-btn2 active" id ="act2">
+                                <div class = inner-circle></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div> 
+        <div class="div_right">
+            <div class="main-section">
+                <div class="search-bar">
+                    <input type="text" name="search-city" id="search-input" placeholder="Search city">
+                </div>
+                <div class="info-wrapper">
+                    <p class="city-name">--</p>
+                    <p class="weather-state">--</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="weather-icon">
+                    <p class="temperature">--</p>
+                </div>
+            </div>
+            <div class="additional-section">
+                <div class="row">
+                    <div class="item">
+                        <div class="label">SUNRISE</div>
+                        <div class="value sunrise">--</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">SUNSET</div>
+                        <div class="value sunset">--</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <div class="label">Humidity</div>
+                        <div class="value"><span class="humidity">--</span>%</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">Wind</div>
+                        <div class="value"><span class="wind-speed">--</span> km/h</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function(){
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('hovered'));
+        this.classList.add('hovered');
+    }
+    list.forEach((item) =>
+    item.addEventListener('mouseover',activeLink));
+</script>
+<script src="../js/weather.js"></script>
+</html>
