@@ -1,2 +1,2 @@
-# homecontrol.github.io
-# tri trieu
+
+#https://home-ktmt.web.app/
